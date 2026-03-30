@@ -1,0 +1,75 @@
+{
+  "orchestrator": "Apex AI Consulting — Von Descieux",
+  "industry": "Electronics Recycling / IT Asset Disposition (ITAD)",
+  "last_updated": "2026-03-30",
+
+  "companies": {
+    "datatech": {
+      "name": "DataTech Disposition",
+      "contact": "James Ignacio",
+      "email_account": "James@DataTechDisposition.com",
+      "repo": "~/james-outreach-harness",
+      "owned_segments": ["SEG-1", "SEG-3", "SEG-7"],
+      "segment_names": ["IT Procurement", "Government / Procurement Admin", "Hospitality"],
+      "status": "active",
+      "notes": "Gmail App Password pending. SEG-4 (Financial/Banks, 6 leads) is demo segment. Do not send SEG-1 or SEG-3 until dry run confirmed."
+    },
+    "ez_recycling": {
+      "name": "EZ Recycling",
+      "contact": "TBD",
+      "email_account": "TBD — spin up new account",
+      "repo": "~/ez-recycling-harness",
+      "owned_segments": ["SEG-5", "SEG-6"],
+      "segment_names": ["Education / Charter Schools", "CEOs of Nonprofits"],
+      "status": "setup",
+      "notes": "New harness. Segment 5 (Education) is incomplete — needs .edu lead verification before any send. Segment 6 (Nonprofits) is 373 leads, high quality."
+    },
+    "company_3": {
+      "name": "TBD — Company 3",
+      "contact": "TBD",
+      "email_account": "TBD",
+      "repo": "~/company3-outreach-harness",
+      "owned_segments": ["SEG-2"],
+      "segment_names": ["EHS California"],
+      "status": "pending",
+      "notes": "343 leads. EHS segment is strong — compliance and safety officers respond well to ITAD value prop. Hold until company confirmed."
+    },
+    "company_4": {
+      "name": "TBD — Company 4",
+      "contact": "TBD",
+      "email_account": "TBD",
+      "repo": "~/company4-outreach-harness",
+      "owned_segments": ["SEG-4"],
+      "segment_names": ["Financial / Banks"],
+      "status": "pending",
+      "notes": "Only 6 leads — best used as demo segment. Financial sector is highest-value per lead. Hold for right company."
+    }
+  },
+
+  "segment_registry": {
+    "SEG-1": { "name": "IT Procurement",                  "lead_count": 361,   "owner": "datatech"   },
+    "SEG-2": { "name": "EHS California",                  "lead_count": 343,   "owner": "company_3"  },
+    "SEG-3": { "name": "Government / Procurement Admin",  "lead_count": "TBD", "owner": "datatech"   },
+    "SEG-4": { "name": "Financial / Banks",               "lead_count": 6,     "owner": "company_4"  },
+    "SEG-5": { "name": "Education / Charter Schools",     "lead_count": "TBD", "owner": "ez_recycling" },
+    "SEG-6": { "name": "CEOs of Nonprofits",              "lead_count": 373,   "owner": "ez_recycling" },
+    "SEG-7": { "name": "Hospitality",                     "lead_count": "TBD", "owner": "datatech"   }
+  },
+
+  "global_rules": {
+    "no_cross_company_sends": true,
+    "require_dry_run_before_live": true,
+    "zerobounce_verify_before_large_send": true,
+    "min_delay_between_sends_seconds": 180,
+    "max_delay_between_sends_seconds": 420,
+    "log_all_sends_to": "master_send_log.json",
+    "dedup_check": "cross-company dedup enforced — a lead that appears in two segment CSVs must be assigned to exactly ONE company. First-owner rule applies."
+  },
+
+  "apex_billing": {
+    "model": "setup_fee_plus_retainer",
+    "setup_fee_per_company": 500,
+    "monthly_retainer_per_company": 300,
+    "notes": "Pricing TBD — adjust per company. DataTech existing engagement terms may differ."
+  }
+}
