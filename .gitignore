@@ -2,3 +2,14 @@ __pycache__/
 *.pyc
 .DS_Store
 master_send_log.json
+
+# Secrets and credentials — never commit these
+.env
+*.env
+credentials.json
+client_secret*.json
+token.json
+*.pem
+*.key
+gmail_credentials.json
+zerobounce_key.txt
