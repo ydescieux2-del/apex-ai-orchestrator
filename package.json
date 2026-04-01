@@ -1,12 +1,23 @@
 {
-  "name": "text-layout-engine",
+  "name": "@apex-ai/text-layout-engine",
   "version": "1.0.0",
-  "description": "Deterministic text layout engine without DOM measurement",
-  "main": "dist/demo.js",
+  "description": "Deterministic text layout engine without DOM measurement — shared across Apex AI harnesses",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "demo": "tsc && node dist/demo.js"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "@napi-rs/canvas": "^0.1.65"
   },
