@@ -1,0 +1,17 @@
+{
+  "name": "text-layout-engine",
+  "version": "1.0.0",
+  "description": "Deterministic text layout engine without DOM measurement",
+  "main": "dist/demo.js",
+  "scripts": {
+    "build": "tsc",
+    "demo": "tsc && node dist/demo.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.65"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.0"
+  }
+}

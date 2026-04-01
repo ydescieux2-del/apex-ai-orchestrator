@@ -16,4 +16,5 @@ zerobounce_key.txt
 
 # Node build artifacts
 node_modules/
+dist/
 runtime/dist/
