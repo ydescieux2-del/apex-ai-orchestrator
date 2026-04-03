@@ -1,0 +1,14 @@
+[
+  {
+    "message_id": "sim-1775003674.28326",
+    "from_email": "testlead@example.com",
+    "from_name": "Test Contact",
+    "company": "Test Company",
+    "subject": "Re: IT Asset Disposal",
+    "snippet": "Yes, this looks interesting. Let's set up a call.",
+    "classification": "interested",
+    "timestamp": "2026-04-01T00:34:34.283266+00:00",
+    "action_taken": "classified_as_interested",
+    "source": "simulation"
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "stats": {
+      "provider": "csv",
+      "raw_count": 5,
+      "normalized": 5,
+      "verified": 5,
+      "scored": 5,
+      "passed_threshold": 4,
+      "duplicates_skipped": 0,
+      "no_email_skipped": 0,
+      "added": 4,
+      "dry_run": true,
+      "threshold": 50,
+      "timestamp": "2026-04-01T01:43:52.570146+00:00"
+    },
+    "entries": [
+      {
+        "email": "sarah.chen@acmehealthla.com",
+        "action": "added",
+        "score": 90,
+        "segment": "SEG-1",
+        "company": "Acme Health LA",
+        "timestamp": "2026-04-01T01:43:52.570611+00:00"
+      },
+      {
+        "email": "m.williams@sdcounty.gov",
+        "action": "added",
+        "score": 85,
+        "segment": "SEG-3",
+        "company": "San Diego County",
+        "timestamp": "2026-04-01T01:43:52.570683+00:00"
+      },
+      {
+        "email": "james@datatechdisposition.com",
+        "action": "added",
+        "score": 61,
+        "segment": "SEG-6",
+        "company": "Data Tech Disposition",
+        "timestamp": "2026-04-01T01:43:52.570735+00:00"
+      },
+      {
+        "email": "lisa.park@ucirvine.edu",
+        "action": "added",
+        "score": 78,
+        "segment": "SEG-5",
+        "company": "UC Irvine",
+        "timestamp": "2026-04-01T01:43:52.570781+00:00"
+      },
+      {
+        "email": "tom@randomcompany.co.uk",
+        "action": "below_threshold",
+        "score": 33,
+        "threshold": 50,
+        "timestamp": "2026-04-01T01:43:52.570833+00:00"
+      }
+    ]
+  },
+  {
+    "stats": {
+      "provider": "apollo",
+      "raw_count": 10,
+      "normalized": 0,
+      "verified": 0,
+      "scored": 0,
+      "passed_threshold": 0,
+      "duplicates_skipped": 0,
+      "no_email_skipped": 10,
+      "added": 0,
+      "dry_run": true,
+      "threshold": 50,
+      "timestamp": "2026-04-01T02:05:21.430460+00:00"
+    },
+    "entries": []
+  },
+  {
+    "stats": {
+      "provider": "apollo",
+      "raw_count": 10,
+      "normalized": 0,
+      "verified": 0,
+      "scored": 0,
+      "passed_threshold": 0,
+      "duplicates_skipped": 0,
+      "no_email_skipped": 10,
+      "added": 0,
+      "dry_run": true,
+      "threshold": 50,
+      "timestamp": "2026-04-01T02:06:23.608399+00:00"
+    },
+    "entries": []
+  }
+]

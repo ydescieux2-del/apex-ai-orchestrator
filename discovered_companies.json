@@ -1,0 +1,72 @@
+[
+  {
+    "company": "Korn Ferry",
+    "domain": "www.kornferry.com",
+    "industry": "management consulting",
+    "size": "9100",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "HealthCare Recruiters International",
+    "domain": "www.hcrnetwork.com",
+    "industry": "staffing & recruiting",
+    "size": "270",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "UCLA",
+    "domain": "www.ucla.edu",
+    "industry": "higher education",
+    "size": "30000",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "University of Southern California",
+    "domain": "www.usc.edu",
+    "industry": "higher education",
+    "size": "25000",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "Confidencial",
+    "domain": "www.confidencial.io",
+    "industry": "human resources",
+    "size": "570",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "AIDS Healthcare Foundation",
+    "domain": "www.aidshealth.org",
+    "industry": "hospital & health care",
+    "size": "5500",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "International Medical Corps",
+    "domain": "www.internationalmedicalcorps.org",
+    "industry": "nonprofit organization management",
+    "size": "8000",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "Agmen Capital",
+    "domain": "www.agmencapital.com",
+    "industry": "venture capital & private equity",
+    "size": "2",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "Stephanie Gilbert and Associates LLC",
+    "domain": "www.stephaniegilbertmft.com",
+    "industry": "mental health care",
+    "size": "1",
+    "location": "Los Angeles, California"
+  },
+  {
+    "company": "NETSOL Technologies Inc.",
+    "domain": "www.netsoltech.com",
+    "industry": "information technology & services",
+    "size": "1600",
+    "location": "Los Angeles, California"
+  }
+]

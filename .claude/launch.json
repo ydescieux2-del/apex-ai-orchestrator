@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Orchestrator — Status",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["orchestrate.py", "--status"],
+      "port": 0
+    },
+    {
+      "name": "Orchestrator — Audit",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["orchestrate.py", "--audit"],
+      "port": 0
+    },
+    {
+      "name": "DataTech SEG-1 — Dry Run",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["orchestrate.py", "--company", "datatech", "--segment", "SEG-1", "--dry-run"],
+      "port": 0
+    },
+    {
+      "name": "Inbox Monitor",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["inbox_monitor.py"],
+      "port": 0
+    },
+    {
+      "name": "Lead Sourcer",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["lead_sourcer.py"],
+      "port": 0
+    }
+  ]
+}
