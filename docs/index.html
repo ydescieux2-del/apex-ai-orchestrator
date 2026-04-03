@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Admin — Harness Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark-bg: #0f1419;
+      --card-bg: #1a1f26;
+      --border: #2a3139;
+      --accent-blue: #3b82f6;
+      --accent-amber: #f59e0b;
+      --text-primary: #e5e7eb;
+      --text-secondary: #9ca3af;
+      --green-active: #10b981;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Mono', monospace;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+
+    .header-super {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .header-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+      color: var(--text-primary);
+    }
+
+    .header-sub {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── GRID ── */
+    .harness-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ── HARNESS CARD ── */
+    .harness-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .harness-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-amber));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .harness-card:hover {
+      border-color: var(--accent-blue);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .harness-card:hover::before {
+      opacity: 1;
+    }
+
+    .harness-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--green-active);
+      border-radius: 3px;
+      color: var(--green-active);
+    }
+
+    .harness-status::before {
+      content: '●';
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .harness-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .harness-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── BUTTONS ── */
+    .button-group {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.7rem 1.2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: var(--dark-bg);
+      border-color: var(--accent-blue);
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      border-color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    /* ── METADATA ── */
+    .harness-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+    }
+
+    .meta-item {
+      color: var(--text-secondary);
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+      font-weight: 500;
+    }
+
+    .meta-value {
+      color: var(--text-primary);
+      word-break: break-all;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="header-super">Von Descieux</div>
+    <div class="header-title">Apex Admin</div>
+    <div class="header-sub">Harness Control Center — One-Click Access</div>
+  </div>
+
+  <div class="harness-grid">
+    <!-- ── MERIDIAN ── -->
+    <div class="harness-card">
+      <div class="harness-status">LIVE</div>
+      <div class="harness-name">MERIDIAN</div>
+      <div class="harness-desc">Campaign Command, CRM, Donor Finance, Creative Studio. DNA Agency & Rebuilding California platform.</div>
+      <div class="button-group">
+        <a href="https://meridian-demo.netlify.app/?admin=apex2026" class="btn btn-primary" target="_blank">Admin Access</a>
+        <a href="https://meridian-demo.netlify.app/" class="btn btn-secondary" target="_blank">Demo</a>
+      </div>
+      <div class="harness-meta">
+        <div class="meta-item">
+          <div class="meta-label">Host</div>
+          <div class="meta-value">Netlify</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Full Stack</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DATATECH ── -->
+    <div class="harness-card">
+      <div class="harness-status">ACTIVE</div>
+      <div class="harness-name">DataTech</div>
+      <div class="harness-desc">B2B email outreach orchestration. 1,127 SoCal IT asset disposition leads across segments.</div>
+      <div class="button-group">
+        <a href="http://localhost:8081" class="btn btn-primary" target="_blank">Open Dashboard</a>
+        <a href="https://github.com/ydescieux2-del/james-outreach-harness" class="btn btn-secondary" target="_blank">GitHub</a>
+      </div>
+      <div class="harness-meta">
+        <div class="meta-item">
+          <div class="meta-label">Host</div>
+          <div class="meta-value">Local :8081</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Outreach Engine</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── EZ RECYCLING ── -->
+    <div class="harness-card">
+      <div class="harness-status">ACTIVE</div>
+      <div class="harness-name">EZ Recycling</div>
+      <div class="harness-desc">B2B email outreach pipeline. 15,117 leads across recycling, education, and nonprofit segments.</div>
+      <div class="button-group">
+        <a href="http://localhost:8081" class="btn btn-primary" target="_blank">Open Dashboard</a>
+        <a href="https://github.com/ydescieux2-del/ez-recycling-harness" class="btn btn-secondary" target="_blank">GitHub</a>
+      </div>
+      <div class="harness-meta">
+        <div class="meta-item">
+          <div class="meta-label">Host</div>
+          <div class="meta-value">Local :8081</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Outreach Engine</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Apex AI Orchestrator — Admin Dashboard</div>
+    <div style="margin-top:0.5rem;opacity:0.7">All harnesses available for remote demo & local development</div>
+  </div>
+</div>
+
+</body>
+</html>
