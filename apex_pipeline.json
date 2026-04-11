@@ -1,0 +1,29 @@
+{
+  "business": "Apex AI",
+  "updated_at": "2026-04-05T16:09:17.027879",
+  "stats": {
+    "total_outreach": 2,
+    "sent": 0,
+    "opened": 0,
+    "replied": 0,
+    "conversion_rate": 0
+  },
+  "by_segment": {},
+  "by_tier": {
+    "hot": {
+      "sent": 0,
+      "opened": 0,
+      "replied": 0
+    },
+    "warm": {
+      "sent": 0,
+      "opened": 0,
+      "replied": 0
+    },
+    "cool": {
+      "sent": 0,
+      "opened": 0,
+      "replied": 0
+    }
+  }
+}

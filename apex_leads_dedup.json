@@ -1,0 +1,64 @@
+[
+  {
+    "id": "TEST-001",
+    "company_name": "Scale AI Inc",
+    "contact_name": "Sarah Chen",
+    "first_name": "Sarah",
+    "title": "VP Sales",
+    "email": "sarah@scaleai.io",
+    "industry": "SaaS - AI/ML Platform",
+    "company_size": "50-200 employees",
+    "website": "https://scale.ai",
+    "location": "San Francisco, CA",
+    "hiring_signals": [
+      "VP Growth",
+      "BDR",
+      "Sales Development"
+    ],
+    "funding_stage": "Series B",
+    "status": "new",
+    "notes": "Growing SaaS, likely needs lead qualification automation",
+    "source": "Apollo test"
+  },
+  {
+    "id": "TEST-002",
+    "company_name": "Fintech Accelerator Labs",
+    "contact_name": "Marcus Johnson",
+    "first_name": "Marcus",
+    "title": "Chief Revenue Officer",
+    "email": "marcus@fintechlabs.com",
+    "industry": "FinTech",
+    "company_size": "100-500 employees",
+    "website": "https://fintechlabs.com",
+    "location": "New York, NY",
+    "hiring_signals": [
+      "Sales Operations",
+      "Revenue Operations"
+    ],
+    "funding_stage": "Series C",
+    "status": "new",
+    "notes": "Series C fintech, scaling revenue org",
+    "source": "Apollo test"
+  },
+  {
+    "id": "TEST-003",
+    "company_name": "B2B SaaS Ventures",
+    "contact_name": "Elena Rodriguez",
+    "first_name": "Elena",
+    "title": "VP Growth",
+    "email": "elena@b2bsaasventures.com",
+    "industry": "Professional Services / Consulting",
+    "company_size": "200-1000 employees",
+    "website": "https://b2bsaasventures.com",
+    "location": "Los Angeles, CA",
+    "hiring_signals": [
+      "VP Sales",
+      "BDR Manager",
+      "Sales Development"
+    ],
+    "funding_stage": "Series A",
+    "status": "new",
+    "notes": "Rapid growth phase, needs pipeline automation",
+    "source": "Apollo test"
+  }
+]
