@@ -315,9 +315,9 @@ Churn rate = Cancellations / Active subscriptions
 
 ## NOTES FOR VON
 
-- **Descieux Digital is your test bed**: If this works for your own company, you'll have proven proof of concept for DataTech and EZ Recycling
+- **Descieux Digital is your test bed**: If this works for your own company, you'll have proven proof of concept for DataTech and ZS Recycling
 - **Focus on demos first**: Don't worry about 100% automation yet; schedule demos, see what works
 - **Iterate on messaging**: If reply rate is low, update icp_config.json email templates
 - **Track what converts**: Which segments (Creator vs. Agency) convert best? Which value props work?
-- **Phase 2 opportunity**: Once Phase 1 works, apply same system to James/DataTech and EZ Recycling with their leads
+- **Phase 2 opportunity**: Once Phase 1 works, apply same system to James/DataTech and ZS Recycling with their leads
 

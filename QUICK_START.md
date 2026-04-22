@@ -68,7 +68,7 @@ For now, this runs manually. To schedule it later, see USER_GUIDE.md.
 | Dashboard | Port | URL |
 |-----------|------|-----|
 | DataTech Disposition | 8080 | http://localhost:8080/demo/dashboard.html |
-| EZ Recycling | 8081 | http://localhost:8081/demo/dashboard.html |
+| ZS Recycling | 8081 | http://localhost:8081/demo/dashboard.html |
 
 ## Key Commands (Copy/Paste)
 
@@ -86,7 +86,7 @@ cd ~/james-outreach-harness && python3 follow_up_sequences.py --status
 cd ~/apex-ai-orchestrator && python3 inbox_monitor.py --status
 
 # Create a Calendly link
-cd ~/apex-ai-orchestrator && python3 calendly_links.py --create "email@example.com" "Name" --company ez_recycling
+cd ~/apex-ai-orchestrator && python3 calendly_links.py --create "email@example.com" "Name" --company zs_recycling
 ```
 
 ## What Happens Next

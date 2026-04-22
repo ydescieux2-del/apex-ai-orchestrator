@@ -16,7 +16,7 @@ This layer sits above individual company harnesses and enforces:
 | Key | Company | Segments | Status |
 |---|---|---|---|
 | `datatech` | DataTech Disposition | SEG-1, SEG-3, SEG-7 | Active |
-| `ez_recycling` | EZ Recycling | SEG-5, SEG-6 | Setup |
+| `zs_recycling` | ZS Recycling | SEG-5, SEG-6 | Setup |
 | `company_3` | TBD — EHS California | SEG-2 | Pending |
 | `company_4` | TBD — Financial/Banks | SEG-4 | Pending |
 
@@ -35,10 +35,10 @@ python orchestrate.py --audit
 
 # Dry run for a specific company + segment
 python orchestrate.py --company datatech --segment SEG-1 --dry-run
-python orchestrate.py --company ez_recycling --segment SEG-6 --dry-run --limit 5
+python orchestrate.py --company zs_recycling --segment SEG-6 --dry-run --limit 5
 
 # Live send (only after dry run confirmed)
-python orchestrate.py --company ez_recycling --segment SEG-6
+python orchestrate.py --company zs_recycling --segment SEG-6
 ```
 
 ---
@@ -49,7 +49,7 @@ If you attempt to send a segment a company does not own, the orchestrator blocks
 
 ```
 [BLOCKED] Segment ownership violation
-  Company      : EZ Recycling
+  Company      : ZS Recycling
   Requested    : SEG-1
   Owns         : SEG-5, SEG-6
   Actual owner : DataTech Disposition
@@ -75,7 +75,7 @@ apex-ai-orchestrator/
 
 1. Add an entry to `company_config.json` under `"companies"` with status `"pending"`
 2. Assign their segment(s) in `"segment_registry"` — update `"owner"` field
-3. Scaffold their harness (mirror `~/ez-recycling-harness`)
+3. Scaffold their harness (mirror `~/zs-recycling-harness`)
 4. Update status to `"setup"` once harness is ready, `"active"` once credentials confirmed
 5. Run `python orchestrate.py --status` to verify
 

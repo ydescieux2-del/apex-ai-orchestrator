@@ -7,7 +7,7 @@ Cross-company outreach orchestration: segment ownership, dedup, master audit log
 
 ## COMPANIES
 - datatech: DataTech Disposition (SEG-1, SEG-3, SEG-7) — Active
-- ez_recycling: EZ Recycling (SEG-5, SEG-6) — Setup
+- zs_recycling: ZS Recycling (SEG-5, SEG-6) — Setup
 - company_3: TBD — EHS California (SEG-2) — Pending
 - company_4: TBD — Financial/Banks (SEG-4) — Pending
 
@@ -50,7 +50,7 @@ import { generateEmailLayout, computeVerticalLayout, computeHorizontalLayout, me
 ## DATA DIRECTORY (added 2026-03-31)
 `data/raw/` — All raw WIZA lead CSVs (source data for ALL companies).
 Moved here from james-outreach-harness because these contain leads across all segments,
-including segments owned by EZ Recycling and pending companies.
+including segments owned by ZS Recycling and pending companies.
 
 Files:
 - May_2024_Leads.csv (6.8MB — all segments)
@@ -61,7 +61,7 @@ Files:
 - WIZA_ProcurementGovAdmin.csv (1.4MB — SEG-3)
 - WIZA_ProcurementITServices.csv (1.7MB — SEG-1)
 - WIZA_ProcurementHospitality.csv (1.5MB — SEG-7)
-- CEOs_NonProfits_LA.csv (407KB — SEG-6, owned by EZ Recycling)
+- CEOs_NonProfits_LA.csv (407KB — SEG-6, owned by ZS Recycling)
 - web_discovered.csv (5KB — new web leads)
 
 ## FOLLOW-UP ENGINE (added 2026-03-31)

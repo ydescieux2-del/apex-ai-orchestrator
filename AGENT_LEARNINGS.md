@@ -5,7 +5,7 @@
 
 ## What This Is
 
-Cross-company outreach orchestration layer for Apex AI Consulting. Manages segment ownership, deduplication, and audit logging across multiple client outreach harnesses (DataTech, EZ Recycling, pending others).
+Cross-company outreach orchestration layer for Apex AI Consulting. Manages segment ownership, deduplication, and audit logging across multiple client outreach harnesses (DataTech, ZS Recycling, pending others).
 
 ## Architecture
 
@@ -28,7 +28,7 @@ data/raw/               — 9 WIZA CSVs covering all segments
 | Company | Segments | Status |
 |---------|----------|--------|
 | DataTech Disposition | SEG-1, SEG-3, SEG-7 | Active |
-| EZ Recycling | SEG-5, SEG-6 | Setup (needs creds) |
+| ZS Recycling | SEG-5, SEG-6 | Setup (needs creds) |
 | EHS California | SEG-2 | Pending |
 | Financial/Banks | SEG-4 | Pending |
 
@@ -62,7 +62,7 @@ $500 setup + $300/mo retainer per company.
 
 ## Known Issues
 
-- EZ Recycling needs Gmail credentials confirmed before moving to "active"
+- ZS Recycling needs Gmail credentials confirmed before moving to "active"
 - 2 pending companies (EHS California, Financial/Banks) have no harnesses built yet
 - Raw WIZA CSVs in `data/raw/` need periodic refresh
 
@@ -71,7 +71,7 @@ $500 setup + $300/mo retainer per company.
 1. Configure Calendly API token
 2. Run first live campaign through full pipeline (DataTech SEG-1 recommended)
 3. Activate scheduled inbox monitoring
-4. Move EZ Recycling from "setup" to "active" once creds confirmed
+4. Move ZS Recycling from "setup" to "active" once creds confirmed
 5. Build harnesses for companies 3 and 4 when ready
 
 ---
@@ -171,5 +171,5 @@ THRESHOLDS = {
 - Gmail MCP → inbox_monitor and response_handler should call Gmail MCP directly (currently IMAP stub)
 - Calendly MCP → calendly_links.py has TODO for actual API calls
 - Ollama/Mistral local routing → cheap tasks could use local models instead of Claude API
-- Multi-company expansion → brain currently prioritizes DataTech only; needs EZ Recycling and company_3 config
+- Multi-company expansion → brain currently prioritizes DataTech only; needs ZS Recycling and company_3 config
 
