@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2026-04-05T16:08:49.228126",
+    "action": "qualifier_complete",
+    "details": "Qualified 0 leads, generated 0 emails",
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-04-05T16:20:22.322520",
+    "action": "generate_email",
+    "details": "sarah.chen@creativestudio.com: \"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:20:22.327033",
+    "action": "generate_email",
+    "details": "marcus.j@productionhouse.com: \"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:20:22.330670",
+    "action": "generate_email",
+    "details": "jennifer.m@brandagency.com: \"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:20:22.334039",
+    "action": "generate_email",
+    "details": "david@contentcreators.io: \"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:20:22.338353",
+    "action": "generate_email",
+    "details": "amanda@videoagency.com: \"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:20:22.338911",
+    "action": "qualifier_complete",
+    "details": "Qualified 5 leads, generated 0 emails",
+    "status": "success"
+  }
+]

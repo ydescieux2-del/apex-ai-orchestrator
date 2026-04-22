@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2026-04-05T16:09:14.529850",
+    "outreach_id": "TEST-001",
+    "recipient": null,
+    "status": "failed",
+    "details": "SMTP error"
+  },
+  {
+    "timestamp": "2026-04-05T16:09:16.021695",
+    "outreach_id": "TEST-002",
+    "recipient": null,
+    "status": "failed",
+    "details": "SMTP error"
+  }
+]

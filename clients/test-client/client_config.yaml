@@ -1,0 +1,10 @@
+client_name: Test Client
+client_slug: test-client
+industry: Technology
+target_market: Southern California SMBs
+contact_email: ydescieux@msn.com
+monthly_rate: 1500
+start_date: '2026-04-10'
+status: active
+onboarded_by: onboard_client.py
+template_ref: /Users/pandorasbox/apex-ai-orchestrator/client_config_template.yaml

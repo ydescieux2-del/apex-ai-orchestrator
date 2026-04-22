@@ -1,0 +1,165 @@
+{
+  "business": "Descieux Digital — Content Creation Platform",
+  "description": "AI-powered end-to-end content creation tools + consulting for social media, shorts, dramas, trailers, and animation",
+  "icp": {
+    "company_size": {
+      "min_employees": 1,
+      "max_employees": 500,
+      "revenue_note": "Solopreneurs to mid-size agencies"
+    },
+    "target_industries": [
+      "Content Creation / Streaming",
+      "Production Companies",
+      "Creative Agencies",
+      "Marketing Agencies",
+      "Influencer / Creator Networks",
+      "Brands (CPG, Fashion, Tech)",
+      "Entertainment / Media",
+      "Nonprofits (storytelling)"
+    ],
+    "buyer_personas": [
+      {
+        "title": "Content Creator / Influencer",
+        "decision_power": "high",
+        "pain_points": ["time to create content", "quality without hiring crew", "keeping up with posting schedule", "learning professional tools"],
+        "context": "Solopreneur or small team. Needs fast, professional-looking output."
+      },
+      {
+        "title": "Production Director / Studio Head",
+        "decision_power": "critical",
+        "pain_points": ["project turnaround time", "crew scalability", "repetitive editing tasks", "cost per production"],
+        "context": "Manages projects for clients. Wants to increase throughput and reduce labor."
+      },
+      {
+        "title": "Creative / Content Director (Brand/Agency)",
+        "decision_power": "high",
+        "pain_points": ["producing enough social content", "consistency across platforms", "rapid iteration", "managing freelance vendors"],
+        "context": "Coordinates content for multiple channels. Needs end-to-end workflow."
+      },
+      {
+        "title": "Marketing Manager",
+        "decision_power": "medium",
+        "pain_points": ["content production costs", "time from brief to delivery", "video for ads and social", "A/B testing creative"],
+        "context": "Needs regular video/short content but limited budget and timeline."
+      }
+    ],
+    "key_pain_points": [
+      "Creating professional-quality content takes days/weeks with current tools",
+      "Can't afford to hire full production crew",
+      "Social media demands constant new content (daily/weekly posting)",
+      "Using 5+ different tools (editing, effects, voiceover, subtitles, etc.)",
+      "High cost per video produced ($500-$5000 per piece with freelancers)",
+      "Steep learning curve on professional software (Adobe, DaVinci, etc.)",
+      "Quality inconsistency across projects and team members",
+      "Can't iterate quickly on creative (A/B testing takes weeks)",
+      "Freelancer management overhead and communication delays",
+      "Need to adapt same content for multiple platforms/formats"
+    ],
+    "buying_signals": [
+      "Currently using multiple paid tools (Adobe, CapCut Pro, ElevenLabs, etc.)",
+      "Job postings for video editors, motion graphics, or content creators",
+      "Hiring freelance creators/editors on Upwork, Fiverr, etc.",
+      "LinkedIn posts about content creation bottlenecks or scaling challenges",
+      "Talking about tools and workflows on Instagram/TikTok/YouTube",
+      "Producing 3+ video/short pieces per week (volume signal)",
+      "Recent funding or investment announcement (budget availability)",
+      "Expanding into new platforms (YouTube, TikTok, Instagram Reels, etc.)"
+    ],
+    "value_proposition": [
+      "Professional-quality shorts, dramas, trailers, and animations in hours not days",
+      "Complete end-to-end system (script → voiceover → editing → effects → subtitles)",
+      "Replace 5+ paid tools with one unified platform",
+      "No hiring crew — scale output without fixed headcount",
+      "One system, infinite platform outputs (auto-format for TikTok, Reels, YouTube, etc.)",
+      "Customize to your style (Von can do custom work; system learns your aesthetic)",
+      "From solopreneur to agency — system scales with your needs"
+    ]
+  },
+  "pricing": {
+    "starter": {
+      "name": "Creator Essentials",
+      "monthly": 249,
+      "includes": [
+        "20 shorts/dramas per month (pre-made templates)",
+        "Basic voiceover (TTS + stock voices)",
+        "Auto-subtitle generation",
+        "Export to TikTok / Reels / Shorts",
+        "Monthly updates & new templates"
+      ],
+      "target": "Solo creators, small channels, testing the platform"
+    },
+    "pro": {
+      "name": "Creator Pro",
+      "monthly": 699,
+      "includes": [
+        "Unlimited shorts/dramas with custom editing",
+        "Premium voiceovers (ElevenLabs, custom voices)",
+        "Advanced effects library & transitions",
+        "Multi-platform auto-formatting",
+        "Batch processing (render 10+ in parallel)",
+        "Priority support",
+        "Monthly strategy calls"
+      ],
+      "target": "Professional creators, small agencies, 2-5 person teams"
+    },
+    "studio": {
+      "name": "Studio Custom",
+      "monthly": "Custom ($2000-$10000+)",
+      "includes": [
+        "All Pro features",
+        "Direct work with Von on custom projects",
+        "Training for your team",
+        "Custom branding/style templates",
+        "API access for integrations",
+        "White-label option",
+        "Dedicated account management"
+      ],
+      "target": "Production companies, agencies, brands needing custom solutions"
+    }
+  },
+  "segments": {
+    "Creator_Influencer": {
+      "name": "Content Creators & Influencers",
+      "description": "Solopreneurs, TikTokers, YouTubers, streamers",
+      "icp_score_floor": 60,
+      "primary_pain": "Time to create content while keeping up posting schedule",
+      "message_angle": "Create 10x faster. Professional quality without the crew."
+    },
+    "Production_Studio": {
+      "name": "Production & Creative Studios",
+      "description": "Production companies, creative agencies, commercial studios",
+      "icp_score_floor": 70,
+      "primary_pain": "Turnaround time and project scalability",
+      "message_angle": "Take on 3x more projects without hiring. Automate the repetitive work."
+    },
+    "Brand_Marketing": {
+      "name": "Brands & Marketing Teams",
+      "description": "In-house marketing, brand social teams, e-commerce",
+      "icp_score_floor": 65,
+      "primary_pain": "Producing enough content on limited budget",
+      "message_angle": "Professional video content for every campaign. No expensive freelancers."
+    },
+    "Agency_Content": {
+      "name": "Agencies (Content/Media)",
+      "description": "Full-service agencies, media agencies, digital studios",
+      "icp_score_floor": 75,
+      "primary_pain": "Managing multiple clients + high content demand",
+      "message_angle": "Deliver more to every client. Predictable timelines. Consistent quality."
+    }
+  },
+  "messaging": {
+    "headline": "Professional Content. Studio Quality. On Demand.",
+    "subheading": "Create shorts, dramas, trailers, and animations in hours, not weeks. One system. Infinite possibilities.",
+    "primary_cta": "See It In Action",
+    "calendar_link": "https://calendly.com/descieuxdigital",
+    "email_templates": {
+      "subject_hook_creator": "Create 10x faster without the crew",
+      "subject_hook_studio": "Scale projects without hiring more editors",
+      "subject_hook_brand": "Video content for every campaign (no freelance bills)",
+      "subject_hook_agency": "Deliver more, faster, to every client",
+      "opening_pain": "Most creators tell us their biggest bottleneck is time: content creation is eating 20+ hours a week and they're still barely keeping up.",
+      "opening_pain_studio": "Production companies we work with often turn down projects because they can't hit the timeline without adding headcount.",
+      "cta": "Quick 15-minute demo this week?"
+    }
+  }
+}

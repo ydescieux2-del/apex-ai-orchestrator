@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex AI Consulting — AI-Orchestrated Outreach</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --amber: #d4a034;
+  --amber-dim: #a07820;
+  --amber-glow: rgba(212,160,52,0.12);
+  --bg: #08090e;
+  --surface: #0d1117;
+  --surface-2: #111827;
+  --border: rgba(212,160,52,0.15);
+  --text: #e8e8e8;
+  --muted: #6b7280;
+  --mono: 'DM Mono', monospace;
+  --serif: 'DM Serif Display', serif;
+  --sans: 'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(8,9,14,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family: var(--serif); color: var(--amber); font-size: 1.2rem; letter-spacing: 0.5px; text-decoration: none; }
+.nav-cta {
+  background: var(--amber); color: #000; font-weight: 600; font-size: 0.85rem;
+  padding: 0.55rem 1.4rem; border-radius: 6px; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,160,52,0.07) 0%, transparent 70%);
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 2px;
+  color: var(--amber); text-transform: uppercase;
+  border: 1px solid var(--border); border-radius: 100px;
+  padding: 0.4rem 1rem; margin-bottom: 2rem;
+}
+.hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.1; max-width: 820px;
+  background: linear-gradient(135deg, #fff 40%, var(--amber) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 1.5rem;
+}
+.hero p {
+  font-size: 1.2rem; color: #9ca3af; max-width: 560px; line-height: 1.7; margin-bottom: 3rem;
+}
+.hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+  background: var(--amber); color: #000; font-weight: 700; font-size: 1rem;
+  padding: 0.9rem 2.2rem; border-radius: 8px; text-decoration: none;
+  transition: transform 0.15s, opacity 0.15s; display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+.btn-secondary {
+  color: var(--amber); font-size: 0.95rem; text-decoration: none;
+  border: 1px solid var(--border); padding: 0.85rem 1.8rem; border-radius: 8px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-secondary:hover { border-color: var(--amber); background: var(--amber-glow); }
+
+.hero-proof {
+  margin-top: 4rem; display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center;
+}
+.proof-stat { text-align: center; }
+.proof-stat .num { font-family: var(--serif); font-size: 2.4rem; color: var(--amber); }
+.proof-stat .label { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.2rem; }
+
+/* SECTION BASE */
+section { padding: 6rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 2.5px;
+  color: var(--amber); text-transform: uppercase; margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15; margin-bottom: 1.2rem;
+}
+.section-sub { font-size: 1.05rem; color: #9ca3af; max-width: 560px; line-height: 1.7; }
+
+/* PROBLEM */
+.problem { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.problem-card {
+  background: var(--bg); border: 1px solid #1f2937; border-radius: 12px;
+  padding: 1.8rem; position: relative; overflow: hidden;
+}
+.problem-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #ef4444, transparent);
+}
+.problem-card .icon { font-size: 1.5rem; margin-bottom: 1rem; }
+.problem-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.problem-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+/* HOW IT WORKS */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem; }
+.step {
+  background: var(--surface-2); border: 1px solid #1f2937; border-radius: 16px;
+  padding: 2rem; position: relative;
+}
+.step-num {
+  font-family: var(--mono); font-size: 0.7rem; color: var(--amber);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem;
+}
+.step h3 { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 0.8rem; }
+.step p { font-size: 0.9rem; color: #9ca3af; line-height: 1.7; }
+.step ul { margin-top: 1rem; list-style: none; }
+.step ul li {
+  font-size: 0.88rem; color: #d1d5db; padding: 0.35rem 0;
+  padding-left: 1.2rem; position: relative;
+}
+.step ul li::before { content: '→'; position: absolute; left: 0; color: var(--amber); font-size: 0.8rem; }
+
+/* INDUSTRIES */
+.industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 3rem; }
+.industry-card {
+  background: var(--surface-2); border: 1px solid #1f2937; border-radius: 10px;
+  padding: 1.5rem; text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.industry-card:hover { border-color: var(--amber); transform: translateY(-3px); }
+.industry-card .ind-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.industry-card h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.3rem; }
+.industry-card p { font-size: 0.78rem; color: var(--muted); }
+.industry-card .score {
+  display: inline-block; margin-top: 0.7rem;
+  font-family: var(--mono); font-size: 0.65rem; color: var(--amber);
+  border: 1px solid var(--border); border-radius: 4px; padding: 0.2rem 0.5rem;
+}
+
+/* PRICING */
+.pricing { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.pricing-card {
+  background: var(--bg); border: 1px solid #1f2937; border-radius: 16px;
+  padding: 2.5rem; position: relative; overflow: hidden;
+}
+.pricing-card.featured {
+  border-color: var(--amber);
+  background: linear-gradient(135deg, var(--bg), #0f0d08);
+}
+.pricing-card.featured::before {
+  content: 'MOST POPULAR'; position: absolute; top: 1.2rem; right: 1.2rem;
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 2px;
+  color: #000; background: var(--amber); padding: 0.25rem 0.6rem; border-radius: 4px;
+}
+.price-tier { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem; }
+.price-amount { font-family: var(--serif); font-size: 3rem; color: var(--amber); line-height: 1; }
+.price-amount span { font-family: var(--sans); font-size: 1rem; color: var(--muted); }
+.price-desc { font-size: 0.88rem; color: #9ca3af; margin-top: 0.5rem; margin-bottom: 2rem; }
+.price-features { list-style: none; }
+.price-features li {
+  font-size: 0.9rem; color: #d1d5db; padding: 0.5rem 0;
+  padding-left: 1.5rem; position: relative;
+  border-bottom: 1px solid #1f2937;
+}
+.price-features li:last-child { border-bottom: none; }
+.price-features li::before { content: '✓'; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
+.price-cta {
+  display: block; margin-top: 2rem; text-align: center;
+  background: var(--amber); color: #000; font-weight: 700; font-size: 0.95rem;
+  padding: 0.9rem; border-radius: 8px; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.pricing-card:not(.featured) .price-cta {
+  background: transparent; color: var(--amber); border: 1px solid var(--border);
+}
+.price-cta:hover { opacity: 0.85; }
+
+/* PROOF / CASE STUDY */
+.proof-block {
+  background: linear-gradient(135deg, var(--surface-2), var(--bg));
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 3rem; margin-top: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+@media (max-width: 700px) { .proof-block { grid-template-columns: 1fr; } }
+.proof-label { font-family: var(--mono); font-size: 0.7rem; color: var(--amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+.proof-quote { font-family: var(--serif); font-size: 1.5rem; line-height: 1.4; color: #fff; margin-bottom: 1.5rem; }
+.proof-attr { font-size: 0.85rem; color: var(--muted); }
+.proof-attr strong { color: #d1d5db; }
+.proof-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.proof-stat-box {
+  background: var(--bg); border: 1px solid #1f2937; border-radius: 10px;
+  padding: 1.5rem; text-align: center;
+}
+.proof-stat-box .n { font-family: var(--serif); font-size: 2rem; color: var(--amber); }
+.proof-stat-box .l { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+
+/* FAQ */
+.faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; max-width: 720px; }
+.faq-item { background: var(--surface-2); border: 1px solid #1f2937; border-radius: 10px; overflow: hidden; }
+.faq-q {
+  padding: 1.3rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.95rem; font-weight: 500;
+  user-select: none;
+}
+.faq-q::after { content: '+'; color: var(--amber); font-size: 1.3rem; font-weight: 300; transition: transform 0.2s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s;
+  font-size: 0.9rem; color: #9ca3af; line-height: 1.7;
+  padding: 0 1.5rem;
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 1.5rem 1.3rem; }
+
+/* FINAL CTA */
+.final-cta {
+  text-align: center; padding: 8rem 2rem;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(212,160,52,0.08) 0%, transparent 70%);
+}
+.final-cta h2 { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.2rem; }
+.final-cta p { color: #9ca3af; font-size: 1.05rem; max-width: 480px; margin: 0 auto 2.5rem; }
+.final-cta .note { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); margin-top: 1.2rem; letter-spacing: 1px; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border); padding: 2rem 3rem;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+footer .logo { font-family: var(--serif); color: var(--amber); font-size: 1rem; }
+footer p { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .hero { padding: 7rem 1.5rem 3rem; }
+  section { padding: 4rem 1.5rem; }
+  .hero-proof { gap: 2rem; }
+  footer { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Apex AI</a>
+  <a href="#book" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">AI-Orchestrated Outbound</div>
+  <h1>Qualified Meetings.<br>On Autopilot.</h1>
+  <p>We build and run your entire B2B outreach pipeline — verified leads, AI-crafted sequences, real appointments. You close deals. We fill your calendar.</p>
+  <div class="hero-actions">
+    <a href="#book" class="btn-primary">Book a 15-Minute Call</a>
+    <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+  </div>
+  <div class="hero-proof">
+    <div class="proof-stat">
+      <div class="num">5,700+</div>
+      <div class="label">Verified Contacts</div>
+    </div>
+    <div class="proof-stat">
+      <div class="num">6</div>
+      <div class="label">Industries Served</div>
+    </div>
+    <div class="proof-stat">
+      <div class="num">48hr</div>
+      <div class="label">Avg. Ramp Time</div>
+    </div>
+    <div class="proof-stat">
+      <div class="num">$0</div>
+      <div class="label">Until You See Results</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">Your pipeline is leaking money every day it sits idle.</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">⏳</div>
+        <h3>Cold outreach takes too long</h3>
+        <p>Building lists, verifying emails, writing sequences, A/B testing — most companies never get through step one.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🎯</div>
+        <h3>Bad data kills deliverability</h3>
+        <p>Unverified leads tank your sender reputation. One bad batch can take your domain offline for weeks.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📉</div>
+        <h3>Generic copy gets ignored</h3>
+        <p>Buyers have seen every template. AI-generated content that sounds like AI-generated content goes straight to spam.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">💸</div>
+        <h3>SDRs are expensive and unpredictable</h3>
+        <p>$60K+ per rep, 3-month ramp, then they leave. The math doesn't work for most growth-stage companies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-label">The System</div>
+    <h2 class="section-title">Three steps from onboarding to booked calls.</h2>
+    <p class="section-sub">Built on the same infrastructure we use for Fortune 500 outreach campaigns at TELUS Digital.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">Step 01</div>
+        <h3>We Load Your ICP</h3>
+        <p>You tell us who your ideal buyer is. We source, enrich, and verify the contacts — zero work on your end.</p>
+        <ul>
+          <li>Target criteria definition</li>
+          <li>Lead list sourcing + enrichment</li>
+          <li>ZeroBounce email verification</li>
+          <li>Deduplication against your CRM</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 02</div>
+        <h3>AI Writes & Deploys</h3>
+        <p>Claude-powered sequences that read like a human wrote them — because the prompts were built by a human who closes deals.</p>
+        <ul>
+          <li>Industry-specific voice + angle</li>
+          <li>Multi-touch sequence (5-day cadence)</li>
+          <li>Subject line A/B variants</li>
+          <li>Compliance-aware send scheduling</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 03</div>
+        <h3>Meetings Hit Your Calendar</h3>
+        <p>Replies route through your email. Interested prospects see a calendar link. You show up to close.</p>
+        <ul>
+          <li>Reply detection + flagging</li>
+          <li>Live send log dashboard</li>
+          <li>Weekly performance report</li>
+          <li>Continuous sequence optimization</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Industries We Serve</div>
+    <h2 class="section-title">Built for operators, not generic SaaS buyers.</h2>
+    <div class="industries-grid">
+      <div class="industry-card">
+        <div class="ind-icon">🖥️</div>
+        <h4>IT Asset Disposal</h4>
+        <p>ITAD, recyclers, refurbishers</p>
+        <div class="score">ICP Score: 95/100</div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">🛡️</div>
+        <h4>Managed Services</h4>
+        <p>MSPs, IT support, cybersecurity</p>
+        <div class="score">ICP Score: 85/100</div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">👥</div>
+        <h4>Staffing & Recruiting</h4>
+        <p>Temp agencies, executive search</p>
+        <div class="score">ICP Score: 80/100</div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">🏢</div>
+        <h4>Commercial Real Estate</h4>
+        <p>Brokers, developers, investors</p>
+        <div class="score">ICP Score: 75/100</div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">🔧</div>
+        <h4>Home Services</h4>
+        <p>HVAC, plumbing, solar, roofing</p>
+        <div class="score">ICP Score: 70/100</div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">📊</div>
+        <h4>Accounting & Finance</h4>
+        <p>CPA firms, bookkeeping, CFO services</p>
+        <div class="score">ICP Score: 72/100</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section>
+  <div class="container">
+    <div class="section-label">Proof</div>
+    <h2 class="section-title">The system runs on real data.</h2>
+    <div class="proof-block">
+      <div>
+        <div class="proof-label">Active Campaign — IT Asset Disposal</div>
+        <div class="proof-quote">"We didn't have the bandwidth to run outbound. Now the meetings just appear."</div>
+        <div class="proof-attr"><strong>SoCal ITAD Operator</strong><br>DataTech Disposition — Los Angeles</div>
+      </div>
+      <div class="proof-stats">
+        <div class="proof-stat-box">
+          <div class="n">5,756</div>
+          <div class="l">Verified Contacts</div>
+        </div>
+        <div class="proof-stat-box">
+          <div class="n">48hr</div>
+          <div class="l">Onboarding to Live</div>
+        </div>
+        <div class="proof-stat-box">
+          <div class="n">0</div>
+          <div class="l">Bounces (ZB verified)</div>
+        </div>
+        <div class="proof-stat-box">
+          <div class="n">$0</div>
+          <div class="l">Ad Spend Required</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Transparent. Performance-oriented.</h2>
+    <p class="section-sub">No long-term contracts. No per-seat pricing. No surprise fees. You pay for results.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount">$750<span>/mo</span></div>
+        <div class="price-desc">One segment. One industry. Up to 1,000 contacts/mo.</div>
+        <ul class="price-features">
+          <li>Single ICP segment</li>
+          <li>Up to 1,000 verified contacts</li>
+          <li>3-touch AI sequence</li>
+          <li>Weekly send log</li>
+          <li>Email reply routing</li>
+          <li>$500 setup fee</li>
+        </ul>
+        <a href="#book" class="price-cta">Book a Call</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="price-tier">Full Pipeline</div>
+        <div class="price-amount">$1,200<span>/mo</span></div>
+        <div class="price-desc">Up to 3 segments. Unlimited contacts. Full orchestration.</div>
+        <ul class="price-features">
+          <li>Up to 3 ICP segments</li>
+          <li>Unlimited verified contacts</li>
+          <li>5-touch AI sequence with variants</li>
+          <li>Live dashboard access</li>
+          <li>Reply detection + flagging</li>
+          <li>Monthly optimization review</li>
+          <li>$1,500 setup fee</li>
+        </ul>
+        <a href="#book" class="price-cta">Book a Call</a>
+      </div>
+      <div class="pricing-card">
+        <div class="price-tier">Enterprise</div>
+        <div class="price-amount">Custom</div>
+        <div class="price-desc">Multi-industry, white-label, or high-volume deployments.</div>
+        <ul class="price-features">
+          <li>Unlimited segments + industries</li>
+          <li>White-label option available</li>
+          <li>Dedicated send infrastructure</li>
+          <li>Custom reporting + CRM sync</li>
+          <li>Priority support</li>
+          <li>Quarterly strategy sessions</li>
+        </ul>
+        <a href="#book" class="price-cta">Book a Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">What people ask before they sign.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How fast can you get a campaign live?</div>
+        <div class="faq-a">Typically 48 hours from onboarding call to first sends. We need your ICP criteria, a sample of 5-10 ideal prospects, and access to the sending email account. That's it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to provide my own lead list?</div>
+        <div class="faq-a">No. We source leads based on your ICP. If you have an existing list, we'll verify and integrate it — but you don't need anything to get started.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if my domain gets flagged?</div>
+        <div class="faq-a">Our ZeroBounce verification step removes invalid emails before a single send goes out. We also respect 5-day cooldowns on any contact who's been recently reached. Domain health is built into the system, not bolted on after a problem.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a contract or minimum commitment?</div>
+        <div class="faq-a">No contract. Month-to-month after setup. Most clients stay because the meetings keep coming — not because they're locked in.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I see what's being sent before it goes out?</div>
+        <div class="faq-a">Yes. You get full sequence approval before activation, plus a live dashboard showing every send, status, and scheduled item in real time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What industries do you NOT work with?</div>
+        <div class="faq-a">We don't run campaigns for financial advice, crypto, adult content, or anything requiring regulated disclaimers we can't verify. Everything else is on the table — if you're unsure, just ask on the call.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="book">
+  <div class="container">
+    <h2>Ready to fill your calendar?</h2>
+    <p>15 minutes to see if it's the right fit. No pitch deck. No pressure. Just the math.</p>
+    <a href="https://calendly.com/descieuxdigital" class="btn-primary" style="font-size:1.05rem; padding: 1rem 2.5rem;">Book Your Free Call</a>
+    <div class="note">TYPICALLY RESPONDS WITHIN 2 HOURS &nbsp;·&nbsp; LOS ANGELES, CA</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Apex AI Consulting</div>
+  <p>© 2026 Descieux Digital · Los Angeles · Built on Claude + Anthropic</p>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>

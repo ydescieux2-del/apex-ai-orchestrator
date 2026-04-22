@@ -1,0 +1,28 @@
+{
+  "calculated_at": "2026-04-05T16:21:50.517607",
+  "total_deals": 5,
+  "deals_by_status": {
+    "closed": 2,
+    "project_in_progress": 1,
+    "demo_completed": 1,
+    "outreach_sent": 1
+  },
+  "mrr_total": 948,
+  "arr_total": 11376,
+  "one_time_revenue_total": 7500,
+  "total_revenue": 8448,
+  "subscriptions": {
+    "Creator Essentials": 1,
+    "Creator Pro": 1,
+    "Studio Custom": 0
+  },
+  "active_projects": 1,
+  "conversion_metrics": {
+    "total_leads": 5,
+    "demos_scheduled": 1,
+    "demos_completed": 2,
+    "conversions": 1,
+    "conversion_rate": 20.0,
+    "avg_deal_value": 8448.0
+  }
+}

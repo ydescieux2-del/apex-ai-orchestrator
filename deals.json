@@ -1,0 +1,154 @@
+[
+  {
+    "id": "DEAL-1775431310-sarah.ch",
+    "lead_email": "sarah.chen@creativestudio.com",
+    "lead_name": "Sarah Chen",
+    "company": "Nexus Creative Studio",
+    "segment": "Production_Studio",
+    "status": "closed",
+    "stages": {
+      "outreach_sent_at": "2026-04-05T16:21:50.513281",
+      "demo_scheduled_at": "2026-04-05T16:21:50.513594",
+      "demo_completed_at": "2026-04-05T16:21:50.513823",
+      "subscription_selected_at": "2026-04-05T16:21:50.514033",
+      "project_started_at": null,
+      "closed_at": "2026-04-05T16:21:50.516685"
+    },
+    "conversion": {
+      "subscription_tier": "Creator Pro",
+      "subscription_start": "2026-04-05T16:21:50.514035",
+      "project_name": null,
+      "project_value": null,
+      "notes": "Loves efficiency focus for post-production",
+      "demo_scheduled_date": "2026-04-10",
+      "calendly_link": "https://calendly.com/descieuxdigital/demo",
+      "demo_outcome": "interested"
+    },
+    "revenue": {
+      "mrr": 699,
+      "one_time_revenue": 0,
+      "total_value": 699
+    }
+  },
+  {
+    "id": "DEAL-1775431310-marcus.j",
+    "lead_email": "marcus.j@productionhouse.com",
+    "lead_name": "Marcus Johnson",
+    "company": "LA Production House",
+    "segment": "Production_Studio",
+    "status": "project_in_progress",
+    "stages": {
+      "outreach_sent_at": "2026-04-05T16:21:50.513286",
+      "demo_scheduled_at": "2026-04-05T16:21:50.514405",
+      "demo_completed_at": "2026-04-05T16:21:50.514618",
+      "subscription_selected_at": null,
+      "project_started_at": "2026-04-05T16:21:50.514833",
+      "closed_at": null
+    },
+    "conversion": {
+      "subscription_tier": null,
+      "subscription_start": null,
+      "project_name": "3-Month Pilot Program",
+      "project_value": 7500,
+      "notes": "Wants to start with pilot project",
+      "demo_scheduled_date": "2026-04-11",
+      "calendly_link": "https://calendly.com/descieuxdigital/demo",
+      "demo_outcome": "interested"
+    },
+    "revenue": {
+      "mrr": 0,
+      "one_time_revenue": 7500,
+      "total_value": 7500
+    }
+  },
+  {
+    "id": "DEAL-1775431310-jennifer",
+    "lead_email": "jennifer.m@brandagency.com",
+    "lead_name": "Jennifer Martinez",
+    "company": "Digital Brand Agency",
+    "segment": "Creator_Influencer",
+    "status": "demo_completed",
+    "stages": {
+      "outreach_sent_at": "2026-04-05T16:21:50.513289",
+      "demo_scheduled_at": "2026-04-05T16:21:50.515285",
+      "demo_completed_at": "2026-04-05T16:21:50.515532",
+      "subscription_selected_at": null,
+      "project_started_at": null,
+      "closed_at": null
+    },
+    "conversion": {
+      "subscription_tier": null,
+      "subscription_start": null,
+      "project_name": null,
+      "project_value": null,
+      "notes": "Needs to see case studies from similar agencies",
+      "demo_scheduled_date": "2026-04-12",
+      "calendly_link": "https://calendly.com/descieuxdigital/demo",
+      "demo_outcome": "need_more_info"
+    },
+    "revenue": {
+      "mrr": 0,
+      "one_time_revenue": 0,
+      "total_value": 0
+    }
+  },
+  {
+    "id": "DEAL-1775431310-david@co",
+    "lead_email": "david@contentcreators.io",
+    "lead_name": "David Kim",
+    "company": "Independent Creator Network",
+    "segment": "Creator_Influencer",
+    "status": "outreach_sent",
+    "stages": {
+      "outreach_sent_at": "2026-04-05T16:21:50.513292",
+      "demo_scheduled_at": null,
+      "demo_completed_at": null,
+      "subscription_selected_at": null,
+      "project_started_at": null,
+      "closed_at": null
+    },
+    "conversion": {
+      "subscription_tier": null,
+      "subscription_start": null,
+      "project_name": null,
+      "project_value": null,
+      "notes": ""
+    },
+    "revenue": {
+      "mrr": 0,
+      "one_time_revenue": 0,
+      "total_value": 0
+    }
+  },
+  {
+    "id": "DEAL-1775431310-amanda@v",
+    "lead_email": "amanda@videoagency.com",
+    "lead_name": "Amanda Rodriguez",
+    "company": "Velocity Video Agency",
+    "segment": "Production_Studio",
+    "status": "closed",
+    "stages": {
+      "outreach_sent_at": "2026-04-05T16:21:50.513295",
+      "demo_scheduled_at": "2026-04-05T16:21:50.515818",
+      "demo_completed_at": "2026-04-05T16:21:50.516058",
+      "subscription_selected_at": "2026-04-05T16:21:50.516295",
+      "project_started_at": null,
+      "closed_at": "2026-04-05T16:21:50.517147"
+    },
+    "conversion": {
+      "subscription_tier": "Creator Essentials",
+      "subscription_start": "2026-04-05T16:21:50.516296",
+      "project_name": null,
+      "project_value": null,
+      "notes": "Ready to sign up immediately",
+      "demo_scheduled_date": "2026-04-10",
+      "calendly_link": "https://calendly.com/descieuxdigital/demo",
+      "demo_outcome": "interested"
+    },
+    "revenue": {
+      "mrr": 249,
+      "one_time_revenue": 0,
+      "total_value": 249
+    }
+  }
+]

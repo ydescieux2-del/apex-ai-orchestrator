@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex AI — Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0e17; color: #e0e0e0; min-height: 100vh; }
+
+  .header {
+    background: linear-gradient(135deg, #0a0e17 0%, #1a1428 50%, #0a0e17 100%);
+    padding: 2rem 3rem; border-bottom: 1px solid #d4a03422;
+  }
+  .header h1 { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #d4a034; }
+  .header .subtitle { color: #8899aa; font-family: 'DM Mono', monospace; font-size: 0.85rem; margin-top: 0.3rem; }
+
+  .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+
+  /* Revenue banner */
+  .revenue-banner {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .rev-card {
+    background: linear-gradient(135deg, #d4a03411, #d4a03406);
+    border: 1px solid #d4a03433; border-radius: 12px; padding: 1.5rem; text-align: center;
+  }
+  .rev-card .num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: #d4a034; }
+  .rev-card .label { font-size: 0.7rem; color: #8899aa; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.3rem; }
+
+  /* Client cards grid */
+  .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+  .client-card {
+    background: #111827; border: 1px solid #1f2937; border-radius: 14px;
+    padding: 1.8rem; position: relative; overflow: hidden;
+  }
+  .client-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  }
+  .client-card.active::before { background: #10b981; }
+  .client-card.setup::before { background: #f59e0b; }
+  .client-card.pending::before { background: #6b7280; }
+
+  .client-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; }
+  .client-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #fff; }
+  .status-badge {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; padding: 0.2rem 0.8rem;
+    border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .status-badge.active { background: #10b98122; color: #10b981; border: 1px solid #10b98144; }
+  .status-badge.setup { background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44; }
+  .status-badge.pending { background: #6b728022; color: #9ca3af; border: 1px solid #6b728044; }
+
+  .client-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1rem; }
+  .metric { text-align: center; padding: 0.8rem; background: #0a0e17; border-radius: 8px; }
+  .metric .val { font-family: 'DM Mono', monospace; font-size: 1.4rem; font-weight: 600; color: #d4a034; }
+  .metric .lbl { font-size: 0.65rem; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.2rem; }
+
+  .segment-list { margin-top: 1rem; }
+  .segment-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.5rem 0; border-bottom: 1px solid #1f2937; font-size: 0.85rem;
+  }
+  .segment-row:last-child { border-bottom: none; }
+  .seg-id { font-family: 'DM Mono', monospace; color: #d4a034; width: 60px; }
+  .seg-name { flex: 1; color: #9ca3af; }
+  .seg-count { font-family: 'DM Mono', monospace; color: #fff; }
+
+  .client-contact { margin-top: 1rem; font-size: 0.8rem; color: #6b7280; }
+  .client-contact span { color: #9ca3af; }
+
+  .billing-row { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.8rem; }
+  .billing-row .amount { font-family: 'DM Mono', monospace; color: #10b981; }
+
+  /* Activity log */
+  .activity-section { margin-top: 2.5rem; }
+  .activity-section h2 { font-family: 'DM Serif Display', serif; color: #d4a034; margin-bottom: 1rem; }
+  .log-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .log-table th {
+    text-align: left; padding: 0.8rem; border-bottom: 2px solid #d4a03433;
+    color: #d4a034; font-family: 'DM Mono', monospace; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .log-table td { padding: 0.7rem 0.8rem; border-bottom: 1px solid #111827; }
+  .log-table tr:hover { background: #111827; }
+
+  #refresh-timer { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: #4b5563; text-align: center; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Apex AI Orchestrator</h1>
+  <div class="subtitle">Command Center &mdash; Von Descieux / Apex AI Consulting</div>
+</div>
+<div class="container">
+  <div class="revenue-banner" id="revenue-banner">
+    <div class="rev-card"><div class="num" id="total-clients">-</div><div class="label">Clients</div></div>
+    <div class="rev-card"><div class="num" id="total-leads">-</div><div class="label">Total Leads</div></div>
+    <div class="rev-card"><div class="num" id="total-sent">-</div><div class="label">Emails Sent</div></div>
+    <div class="rev-card"><div class="num" id="mrr">-</div><div class="label">Monthly Revenue</div></div>
+    <div class="rev-card"><div class="num" id="total-segments">-</div><div class="label">Segments</div></div>
+  </div>
+  <div class="clients-grid" id="clients-grid"></div>
+  <div class="activity-section">
+    <h2>Master Send Log</h2>
+    <table class="log-table">
+      <thead><tr><th>Timestamp</th><th>Company</th><th>Segment</th><th>Mode</th><th>Result</th></tr></thead>
+      <tbody id="log-body"></tbody>
+    </table>
+  </div>
+  <div id="refresh-timer"></div>
+</div>
+
+<script>
+// Apex Command Center — loads config + logs from local files
+// Serve with: python3 -m http.server 9000 (from apex-ai-orchestrator root)
+// Open: http://localhost:9000/docs/command-center.html
+
+async function loadData() {
+  try {
+    const configRes = await fetch('../company_config.json');
+    const config = await configRes.json();
+    const companies = config.companies || {};
+
+    let logEntries = [];
+    try {
+      const logRes = await fetch('../master_send_log.json');
+      logEntries = await logRes.json();
+    } catch(e) {}
+
+    // Revenue calculations
+    const billing = config.apex_billing || {};
+    const clientBilling = config.client_billing || {};
+    const activeCount = Object.values(companies).filter(c => c.status === 'active').length;
+    const setupCount = Object.values(companies).filter(c => c.status === 'setup').length;
+
+    let mrr = 0;
+    for (const [key, co] of Object.entries(companies)) {
+      if (co.status === 'active' || co.status === 'setup') {
+        const cb = clientBilling[key] || {};
+        mrr += cb.monthly_retainer || billing.monthly_retainer_per_company || 300;
+      }
+    }
+
+    const totalLeads = Object.values(config.segment_registry || {})
+      .reduce((sum, s) => sum + (typeof s.lead_count === 'number' ? s.lead_count : 0), 0);
+    const totalSent = logEntries.filter(e => !e.dry_run).length;
+    const totalSegments = Object.keys(config.segment_registry || {}).length;
+
+    document.getElementById('total-clients').textContent = Object.keys(companies).length;
+    document.getElementById('total-leads').textContent = totalLeads.toLocaleString();
+    document.getElementById('total-sent').textContent = totalSent;
+    document.getElementById('mrr').textContent = '$' + mrr.toLocaleString() + '/mo';
+    document.getElementById('total-segments').textContent = totalSegments;
+
+    // Build client cards
+    const grid = document.getElementById('clients-grid');
+    grid.innerHTML = '';
+
+    for (const [key, co] of Object.entries(companies)) {
+      const status = co.status || 'pending';
+      const segments = co.owned_segments || [];
+      const segNames = co.segment_names || [];
+
+      // Count sends for this company
+      const companySends = logEntries.filter(e => e.company_key === key && !e.dry_run).length;
+
+      const segRows = segments.map((segId, i) => {
+        const seg = (config.segment_registry || {})[segId] || {};
+        const count = typeof seg.lead_count === 'number' ? seg.lead_count : 'TBD';
+        return `<div class="segment-row">
+          <span class="seg-id">${segId}</span>
+          <span class="seg-name">${seg.name || segNames[i] || ''}</span>
+          <span class="seg-count">${count}</span>
+        </div>`;
+      }).join('');
+
+      const cb = clientBilling[key] || {};
+      const setupFee = cb.setup_fee || billing.setup_fee_per_company || 500;
+      const retainer = cb.monthly_retainer || billing.monthly_retainer_per_company || 300;
+
+      const card = document.createElement('div');
+      card.className = `client-card ${status}`;
+      card.innerHTML = `
+        <div class="client-header">
+          <div class="client-name">${co.name}</div>
+          <span class="status-badge ${status}">${status}</span>
+        </div>
+        <div class="client-metrics">
+          <div class="metric"><div class="val">${segments.length}</div><div class="lbl">Segments</div></div>
+          <div class="metric"><div class="val">${companySends}</div><div class="lbl">Sent</div></div>
+          <div class="metric"><div class="val">$${retainer}</div><div class="lbl">/month</div></div>
+        </div>
+        <div class="segment-list">${segRows}</div>
+        <div class="client-contact">Contact: <span>${co.contact || 'TBD'}</span></div>
+        <div class="billing-row">
+          <span>Setup</span><span class="amount">$${setupFee}</span>
+        </div>
+        <div class="billing-row">
+          <span>Retainer</span><span class="amount">$${retainer}/mo</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    }
+
+    // Populate master log
+    const tbody = document.getElementById('log-body');
+    tbody.innerHTML = logEntries.slice(-30).reverse().map(e =>
+      `<tr>
+        <td style="font-family:'DM Mono',monospace;font-size:0.75rem">${e.timestamp || ''}</td>
+        <td>${e.company_name || e.company_key || ''}</td>
+        <td style="font-family:'DM Mono',monospace;color:#d4a034">${e.segment || ''}</td>
+        <td>${e.dry_run ? 'DRY RUN' : 'LIVE'}</td>
+        <td style="color:${e.result === 'success' ? '#10b981' : '#ef4444'}">${e.result || ''}</td>
+      </tr>`
+    ).join('');
+
+    document.getElementById('refresh-timer').textContent = 'Last updated: ' + new Date().toLocaleString();
+
+  } catch(err) {
+    console.error('Command center load error:', err);
+    document.getElementById('refresh-timer').textContent = 'Error loading data: ' + err.message;
+  }
+}
+
+loadData();
+setInterval(loadData, 30000);
+</script>
+</body>
+</html>

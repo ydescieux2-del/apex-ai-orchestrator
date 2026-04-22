@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1,127 Qualified ITAD Leads in 30 Days — Apex AI Consulting</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #080c14;
+    --bg-card:   #0d1220;
+    --bg-deep:   #060a10;
+    --bg-rule:   #141b2d;
+    --gold:      #c9a84c;
+    --gold-dim:  #9e7e36;
+    --gold-pale: #e8d08a;
+    --gold-glow: rgba(201,168,76,0.12);
+    --text:      #d4d8e2;
+    --text-muted:#8a9099;
+    --border:    #1e2840;
+    --border-mid:#253050;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PAGE ── */
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 0 80px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg-deep);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 52px 52px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dim) 50%, transparent 100%);
+  }
+
+  .apex-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .apex-mark {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--gold);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .apex-name {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    font-weight: 600;
+  }
+
+  .apex-sub {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    border: 1px solid var(--gold-dim);
+    padding: 4px 12px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.8rem;
+    font-weight: normal;
+    color: #f0ece0;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 640px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.65;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote-wrapper {
+    padding: 0 52px;
+    margin: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 36px 0 36px 36px;
+  }
+
+  .pull-quote-text {
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--gold-pale);
+    line-height: 1.6;
+    max-width: 640px;
+  }
+
+  .pull-quote-attr {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content {
+    padding: 0 52px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-dim) 0%, transparent 70%);
+    margin: 44px 0;
+    opacity: 0.35;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding-top: 48px;
+    margin-bottom: 0;
+  }
+
+  .section-number {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: var(--gold-pale);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section p {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 14px;
+    max-width: 700px;
+  }
+
+  /* ── SOLUTION LIST ── */
+  .solution-list {
+    list-style: none;
+    margin-top: 8px;
+    counter-reset: sol;
+  }
+
+  .solution-list li {
+    counter-increment: sol;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--bg-rule);
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  .solution-list li:last-child { border-bottom: none; }
+
+  .solution-list li::before {
+    content: counter(sol, decimal-leading-zero);
+    color: var(--gold-dim);
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    min-width: 28px;
+    margin-top: 1px;
+  }
+
+  /* ── STAT CARDS ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-bottom: 2px solid var(--gold-dim);
+    padding: 24px 20px 22px;
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold-glow);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .stat-card:hover::before { opacity: 1; }
+
+  .stat-number {
+    font-family: Georgia, serif;
+    font-size: 1.9rem;
+    color: var(--gold);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .pipeline-steps {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .pipeline-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 18px 16px;
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+    position: relative;
+  }
+
+  .pipeline-step:not(:first-child) {
+    border-left-color: transparent;
+    margin-left: -1px;
+  }
+
+  .pipeline-step:first-child { border-radius: 4px 0 0 4px; }
+  .pipeline-step:last-child  { border-radius: 0 4px 4px 0; }
+
+  .pipeline-step-num {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 6px;
+  }
+
+  .pipeline-step-name {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: var(--gold-pale);
+  }
+
+  .pipeline-arrow {
+    align-self: center;
+    color: var(--gold-dim);
+    font-size: 0.85rem;
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+
+  /* ── ABOUT BLOCK ── */
+  .about-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 26px 28px;
+    border-radius: 4px;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--text);
+  }
+
+  .about-specialties {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .specialty-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    border: 1px solid var(--border-mid);
+    padding: 4px 12px;
+    border-radius: 2px;
+    background: var(--bg);
+  }
+
+  /* ── CTA ── */
+  .cta-box {
+    margin-top: 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--gold-dim);
+    border-radius: 4px;
+    padding: 36px 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-dim), transparent);
+  }
+
+  .cta-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 14px;
+  }
+
+  .cta-headline {
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--gold-pale);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .cta-pricing {
+    font-size: 0.92rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  .cta-pricing strong {
+    color: var(--gold);
+    font-weight: normal;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+  }
+
+  .cta-contact {
+    display: inline-block;
+    padding: 11px 28px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .cta-contact:hover {
+    background: var(--gold);
+    color: var(--bg);
+  }
+
+  /* ── FOOTER ── */
+  .footer-bar {
+    margin: 56px 52px 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-brand {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: var(--gold-pale);
+  }
+
+  .footer-details {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .hero, .content, .footer-bar { padding-left: 24px; padding-right: 24px; }
+    .pull-quote-wrapper          { padding-left: 24px; padding-right: 24px; }
+    .hero-title                  { font-size: 2rem; }
+    .pipeline-steps              { flex-direction: column; }
+    .pipeline-step               { border-radius: 4px !important; border-left-color: var(--border) !important; margin-left: 0 !important; }
+    .stats-grid                  { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="apex-brand">
+      <div class="apex-mark">A</div>
+      <div>
+        <div class="apex-name">Apex AI Consulting</div>
+        <div class="apex-sub">AI Automation &amp; Growth Systems</div>
+      </div>
+    </div>
+    <div class="hero-label">Case Study</div>
+    <h1 class="hero-title">1,127 Qualified ITAD Leads in 30 Days</h1>
+    <p class="hero-subtitle">How DataTech Disposition automated B2B lead generation with AI — without adding a single headcount.</p>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote-wrapper">
+    <div class="pull-quote">
+      <div class="pull-quote-text">"We went from cold outreach taking days to a fully automated pipeline running overnight."</div>
+      <div class="pull-quote-attr">— DataTech Disposition, Southern California</div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <div class="section-number">Section 01</div>
+      <h2 class="section-title">The Challenge</h2>
+      <p>DataTech Disposition, a Southern California IT asset disposition company, needed to scale outbound lead generation without hiring additional sales staff. Manual prospecting was consuming more than 20 hours per week — time that was pulling the team away from closing deals and servicing existing accounts.</p>
+      <p>The challenge wasn't finding leads. It was finding the right leads, at scale, with enough personalization to get a response — without a dedicated SDR team to do it.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <div class="section-number">Section 02</div>
+      <h2 class="section-title">The Solution</h2>
+      <p>Apex AI built a custom <strong style="color: var(--gold-pale); font-weight: normal;">Apex AI Orchestrator</strong> — an end-to-end AI-powered outreach pipeline purpose-built for the ITAD sector. Five interconnected systems, one seamless workflow.</p>
+      <ol class="solution-list">
+        <li>Automated prospect sourcing across 12 Southern California verticals — finance, healthcare, logistics, manufacturing, and more</li>
+        <li>ZeroBounce email verification at every stage — 98% deliverability, zero bounce risk, protected sender reputation</li>
+        <li>AI-personalized outreach sequences — each email references the prospect's vertical, company size, and likely ITAD pain point</li>
+        <li>Real-time tracking dashboard — pipeline visibility, open rates, click tracking, and response flags in one internal view</li>
+        <li>Response handling and qualification scoring — inbound replies automatically triaged and scored so sales only touches warm leads</li>
+      </ol>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+      <div class="section-number">Section 03</div>
+      <h2 class="section-title">Results</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">1,127</div>
+          <div class="stat-label">Qualified Leads Generated</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Email Deliverability Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">30</div>
+          <div class="stat-label">Days to Full Pipeline</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Additional Headcount Required</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+      <div class="section-number">Section 04</div>
+      <h2 class="section-title">How It Works</h2>
+      <p>Six stages. Fully automated from source to qualified response.</p>
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">01</div>
+          <div class="pipeline-step-name">Source</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">02</div>
+          <div class="pipeline-step-name">Qualify</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">03</div>
+          <div class="pipeline-step-name">Personalize</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">04</div>
+          <div class="pipeline-step-name">Send</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">05</div>
+          <div class="pipeline-step-name">Track</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">06</div>
+          <div class="pipeline-step-name">Respond</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 5 -->
+    <div class="section">
+      <div class="section-number">Section 05</div>
+      <h2 class="section-title">About Apex AI Consulting</h2>
+      <div class="about-block">
+        We build AI automation systems for B2B companies that need to scale without scaling headcount. Our approach is infrastructure-first — systems that run overnight, surface intelligence in the morning, and let your team focus on relationships instead of research.
+        <div class="about-specialties">
+          <span class="specialty-tag">Lead Generation</span>
+          <span class="specialty-tag">Outreach Automation</span>
+          <span class="specialty-tag">Proposal Drafting</span>
+          <span class="specialty-tag">Content Pipelines</span>
+          <span class="specialty-tag">ITAD &amp; E-Waste Sector</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <div class="cta-label">Now Onboarding</div>
+      <div class="cta-headline">Ready to build your pipeline?</div>
+      <div class="cta-pricing">
+        We're onboarding <strong>3 new clients</strong> this month.<br>
+        <strong>Setup: $2,000</strong> &nbsp;&middot;&nbsp; <strong>Monthly: $1,500</strong>
+      </div>
+      <a href="mailto:ydescieux@msn.com" class="cta-contact">ydescieux@msn.com</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <div class="footer-brand">Apex AI Consulting</div>
+    <div class="footer-details">
+      Descieux Digital &nbsp;|&nbsp; Los Angeles, CA
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

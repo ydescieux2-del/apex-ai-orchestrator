@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "2026-04-05T16:07:08.169066",
+    "action": "sourcer_start",
+    "details": "Target: 50 qualified leads (min ICP score: 60.0)",
+    "status": "info"
+  },
+  {
+    "timestamp": "2026-04-05T16:07:08.562125",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:07:08.864784",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:07:09.174162",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:07:09.380175",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:07:09.573756",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:07:09.871095",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:07:09.872596",
+    "action": "sourcer_complete",
+    "details": "Added 0 new leads (Total: 0)",
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:57.088532",
+    "action": "sourcer_start",
+    "details": "Target: 50 qualified leads (min ICP score: 60.0)",
+    "status": "info"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:57.485450",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:57.674475",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:57.963811",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:58.305440",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:58.608608",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:58.791539",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:59.088458",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:59.279531",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:59.469386",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:59.677162",
+    "action": "apollo_search",
+    "details": "Error: 403 Client Error: Forbidden for url: https://api.apollo.io/v1/mixed_companies/search",
+    "status": "error"
+  },
+  {
+    "timestamp": "2026-04-05T16:19:59.679860",
+    "action": "sourcer_complete",
+    "details": "Added 0 new leads (Total: 3)",
+    "status": "success"
+  }
+]

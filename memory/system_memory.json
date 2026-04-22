@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "created": "2026-04-09T00:00:00",
+  "last_updated": "2026-04-09T00:00:00",
+  "segments": {
+    "SEG-1": {
+      "name": "IT Procurement",
+      "company": "datatech",
+      "sends": 9,
+      "replies": 0,
+      "reply_rate": 0.0,
+      "best_subject": null,
+      "best_body_idx": null,
+      "notes": [
+        "As of Apr 9: 9 real sends, 36 dry-run. Sender still in warmup (Day 3).",
+        "4,745 leads qualified. ZeroBounce verified on ~550. Strong ICP in SEG-1."
+      ]
+    },
+    "SEG-6": {
+      "name": "CEOs of Nonprofits",
+      "company": "zs_recycling",
+      "sends": 0,
+      "replies": 0,
+      "reply_rate": 0.0,
+      "best_subject": null,
+      "best_body_idx": null,
+      "notes": [
+        "373 leads. High quality. ZS Recycling account not yet configured. Hold."
+      ]
+    }
+  },
+  "senders": {
+    "SENDER_01": {
+      "email": "James@DataTechDisposition.com",
+      "daily_cap": 50,
+      "warmup_day": 3,
+      "health": "warming",
+      "bounces": 0,
+      "bounce_rate": 0.0,
+      "note": "Started warmup Apr 6. Sending 10/day during warmup. Do not exceed."
+    }
+  },
+  "copy_performance": {},
+  "global_stats": {
+    "total_sends": 9,
+    "total_replies": 0,
+    "total_meetings": 0,
+    "total_revenue": 0,
+    "total_dry_runs": 36
+  },
+  "strategy_notes": [
+    {
+      "note": "System initialized. Brain layer added Apr 9. First autonomous cycle pending.",
+      "timestamp": "2026-04-09T00:00:00"
+    },
+    {
+      "note": "DataTech SEG-1 is primary active segment. 4,745 qualified leads ready. Sender on warmup — stay at 10/day until Day 14.",
+      "timestamp": "2026-04-09T00:00:00"
+    },
+    {
+      "note": "ZS Recycling credentials pending. SEG-6 on hold. SEG-2 (company_3) pending. SEG-4 (company_4) demo only.",
+      "timestamp": "2026-04-09T00:00:00"
+    }
+  ],
+  "last_action": null,
+  "last_decision": null
+}

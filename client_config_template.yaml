@@ -1,0 +1,89 @@
+# ============================================================================
+# APEX AI ORCHESTRATOR — New Client Onboarding Config
+# ============================================================================
+# Fill this out for a new outreach client. Then run:
+#   python scaffold_client.py --config client_configs/acme.yaml
+#   python scaffold_client.py --config client_configs/acme.yaml --dry-run
+# ============================================================================
+
+company:
+  key: acme_corp                          # Snake_case, unique across all companies
+  name: "Acme Corporation"                # Display name
+  contact: "John Smith"                   # Primary contact
+  email_account: "john@acmecorp.com"      # Gmail account for outreach
+  industry: "IT Asset Disposition"        # Industry vertical
+  website: "www.acmecorp.com"
+  phone: "(555) 987-6543"
+  tagline: "Responsible Electronics Recycling"
+
+harness:
+  repo_path: "~/acme-outreach-harness"    # Where to create the harness
+  dashboard_port: 8082                    # Unique port per client
+  copy_industry_modules: true             # Copy shared industry/ folder (ITAD certs, compliance, ESG)
+
+segments:
+  - id: "SEG-8"                           # Must not collide with existing segments
+    name: "Healthcare IT Directors"
+    list_name: "Healthcare IT Directors SoCal"
+    compliance_hook: "HIPAA"              # Regulatory hook for email copy
+    template:
+      subject: "HIPAA-compliant device disposal for {company}"
+      body: |
+        Hi {first_name},
+
+        When {company} retires medical devices, workstations, or servers, patient data on
+        those drives creates real HIPAA exposure without a certificate of destruction on file.
+
+        I'm with {company_brand}. We handle certified data destruction and IT asset disposal
+        for healthcare organizations across Southern California. Every device gets a serialized
+        certificate your compliance team can retain for HIPAA audits, and all hardware is
+        recycled through R2-certified partners.
+
+        No minimum volume. Multi-site pickup scheduling available.
+
+        If {company} has equipment in storage or a refresh coming up, I'd welcome a quick call.
+
+        15 minutes this week?
+
+        -- {sender_name}
+        {company_brand}
+        {sender_email} | {sender_phone}
+        {sender_website}
+
+  - id: "SEG-9"
+    name: "Biotech Lab Managers"
+    list_name: "Biotech Lab Managers SoCal"
+    compliance_hook: "EPA / CalRecycle"
+    template:
+      subject: "Certified lab equipment disposal for {company}"
+      body: |
+        Hi {first_name},
+
+        Lab equipment retirements at {company} — whether analytical instruments, servers,
+        or computing hardware — often carry both data security and environmental compliance
+        requirements under EPA and CalRecycle regulations.
+
+        I'm with {company_brand}. We provide end-to-end IT asset disposition with serialized
+        certificates of destruction, R2-certified recycling, and full chain-of-custody documentation.
+
+        No minimum volume. We handle everything from a single workstation to a full lab decommission.
+
+        Worth a 10-minute call?
+
+        -- {sender_name}
+        {company_brand}
+        {sender_email} | {sender_phone}
+        {sender_website}
+
+billing:
+  setup_fee: 500
+  monthly_retainer: 500
+
+design_tokens:
+  colors:
+    primary: "#00C9B1"
+    secondary: "#2E86DE"
+    accent: "#FF6B35"
+    dark: "#0B1929"
+    card: "#1A3A5C"
+  font_family: "'Inter', system-ui, sans-serif"
