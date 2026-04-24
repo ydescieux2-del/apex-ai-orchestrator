@@ -5,7 +5,7 @@ Wraps send_emails.py with segment ownership enforcement.
 
 Usage:
   python orchestrate.py --company datatech --segment SEG-1 --dry-run
-  python orchestrate.py --company ez_recycling --segment SEG-6
+  python orchestrate.py --company zs_recycling --segment SEG-6
   python orchestrate.py --status          # show all companies + segments
   python orchestrate.py --audit           # cross-company dedup check
 """
@@ -153,7 +153,7 @@ def run_audit(config):
     else:
         print(f"  [OK] No cross-company email duplicates detected in checked sources.")
 
-    print(f"\n  Note: CSV-based leads (ez-recycling-harness) not yet checked — add leads first.\n")
+    print(f"\n  Note: CSV-based leads (zs-recycling-harness) not yet checked — add leads first.\n")
 
 
 def main():
@@ -165,11 +165,11 @@ def main():
             "  python orchestrate.py --status\n"
             "  python orchestrate.py --audit\n"
             "  python orchestrate.py --company datatech --segment SEG-1 --dry-run\n"
-            "  python orchestrate.py --company ez_recycling --segment SEG-6 --dry-run\n"
-            "  python orchestrate.py --company ez_recycling --segment SEG-6\n"
+            "  python orchestrate.py --company zs_recycling --segment SEG-6 --dry-run\n"
+            "  python orchestrate.py --company zs_recycling --segment SEG-6\n"
         ),
     )
-    parser.add_argument("--company",  help="Company key (datatech, ez_recycling, company_3, company_4)")
+    parser.add_argument("--company",  help="Company key (datatech, zs_recycling, company_3, company_4)")
     parser.add_argument("--segment",  help="Segment ID (SEG-1 through SEG-7)")
     parser.add_argument("--dry-run",  action="store_true", help="Preview without sending")
     parser.add_argument("--limit",    metavar="N", type=int, default=None, help="Cap leads processed")

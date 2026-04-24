@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Follow-Up Sequence Engine — DataTech Disposition / EZ Recycling
+Follow-Up Sequence Engine — DataTech Disposition / ZS Recycling
 Sends multi-touch follow-ups on Day 3, 7, 14 from original send.
 Respects deconfliction, reply detection, and opt-out rules.
 """
@@ -358,17 +358,17 @@ if __name__ == "__main__":
         epilog=(
             "Examples:\n"
             "  python follow_up_engine.py --status\n"
-            "  python follow_up_engine.py --status --company ez_recycling\n"
+            "  python follow_up_engine.py --status --company zs_recycling\n"
             "  python follow_up_engine.py --dry-run\n"
             "  python follow_up_engine.py --dry-run --company datatech\n"
-            "  python follow_up_engine.py --run-due --company ez_recycling\n"
+            "  python follow_up_engine.py --run-due --company zs_recycling\n"
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument("--run-due",  action="store_true", help="Send all due follow-ups")
     parser.add_argument("--dry-run",  action="store_true", help="Preview without sending")
     parser.add_argument("--status",   action="store_true", help="Show follow-up stats")
-    parser.add_argument("--company",  metavar="KEY",       help="Filter to a single company (datatech, ez_recycling)")
+    parser.add_argument("--company",  metavar="KEY",       help="Filter to a single company (datatech, zs_recycling)")
     args = parser.parse_args()
 
     if args.status:

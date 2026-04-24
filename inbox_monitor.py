@@ -106,7 +106,7 @@ def draft_interested_reply(to_email: str, sender_name: str, company_name: str,
     Falls back to printing if MCP not available.
     """
     if not calendly_url:
-        calendly_url = "https://calendly.com/ez-recycling/30min"  # default
+        calendly_url = "https://calendly.com/zs-recycling/30min"  # default
 
     first_name = sender_name.split()[0] if sender_name else "there"
     subject    = f"Re: Let's connect — ITAD / E-Waste Pickup"
@@ -117,7 +117,7 @@ def draft_interested_reply(to_email: str, sender_name: str, company_name: str,
         f"Feel free to grab a time that works for you:\n"
         f"👉 {calendly_url}\n\n"
         f"Looking forward to connecting.\n\n"
-        f"Best,\nJ. Aaron\nEZ Recycling\n"
+        f"Best,\nJ. Aaron\nZS Recycling\n"
         f"J.aaron@zsrecycling.com"
     )
 
