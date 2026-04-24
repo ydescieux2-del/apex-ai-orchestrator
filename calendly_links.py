@@ -14,13 +14,13 @@ COMPANY_CFG      = ROOT / "company_config.json"
 
 # Default Calendly event type URIs per company — update with real URIs from Calendly dashboard
 DEFAULT_EVENT_TYPES = {
-    "ez_recycling": "https://api.calendly.com/event_types/EZ_RECYCLING_30MIN",
+    "zs_recycling": "https://api.calendly.com/event_types/ZS_RECYCLING_30MIN",
     "datatech":     "https://api.calendly.com/event_types/DATATECH_30MIN",
 }
 
 # Fallback public booking links if single-use creation fails
 PUBLIC_BOOKING_LINKS = {
-    "ez_recycling": "https://calendly.com/ez-recycling/30min",
+    "zs_recycling": "https://calendly.com/zs-recycling/30min",
     "datatech":     "https://calendly.com/datatechdisposition/30min",
 }
 
@@ -35,7 +35,7 @@ def save_json(path: Path, data):
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
 
-def get_booking_link(email: str, name: str, company_key: str = "ez_recycling") -> dict:
+def get_booking_link(email: str, name: str, company_key: str = "zs_recycling") -> dict:
     """
     Returns a scheduling link for the prospect.
     Tries single-use Calendly link first, falls back to public link.
@@ -66,7 +66,7 @@ def get_booking_link(email: str, name: str, company_key: str = "ez_recycling") -
     # For now we log the intent and use the public link
     link_type  = "public"
     link       = PUBLIC_BOOKING_LINKS.get(company_key,
-                     "https://calendly.com/ez-recycling/30min")
+                     "https://calendly.com/zs-recycling/30min")
 
     # TODO: Replace with actual MCP call:
     # result = mcp__calendly__scheduling_links-create_single_use_scheduling_link(
@@ -94,7 +94,7 @@ def get_booking_link(email: str, name: str, company_key: str = "ez_recycling") -
     return record
 
 
-def mark_booked(email: str, company_key: str = "ez_recycling"):
+def mark_booked(email: str, company_key: str = "zs_recycling"):
     """Mark a prospect's link as booked (call when Calendly webhook fires)."""
     tracker = load_json(TRACKER_FILE, [])
     changed = 0
@@ -110,7 +110,7 @@ def mark_booked(email: str, company_key: str = "ez_recycling"):
 
 
 def inject_link_into_template(template: str, email: str, name: str,
-                               company_key: str = "ez_recycling") -> str:
+                               company_key: str = "zs_recycling") -> str:
     """Replace [CALENDLY_LINK] placeholder in an email template."""
     record = get_booking_link(email, name, company_key)
     return template.replace("[CALENDLY_LINK]", record["link"])
@@ -142,9 +142,9 @@ if __name__ == "__main__":
                         help="Generate a scheduling link for EMAIL 'Full Name'")
     parser.add_argument("--booked",  metavar="EMAIL",
                         help="Mark EMAIL as having booked a meeting")
-    parser.add_argument("--company", default="ez_recycling",
+    parser.add_argument("--company", default="zs_recycling",
                         choices=list(DEFAULT_EVENT_TYPES.keys()),
-                        help="Company context (default: ez_recycling)")
+                        help="Company context (default: zs_recycling)")
     parser.add_argument("--status",  action="store_true",
                         help="Show tracker summary")
     args = parser.parse_args()

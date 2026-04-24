@@ -14,11 +14,11 @@
       "status": "active",
       "notes": "Gmail App Password pending. SEG-4 (Financial/Banks, 6 leads) is demo segment. Do not send SEG-1 or SEG-3 until dry run confirmed."
     },
-    "ez_recycling": {
-      "name": "EZ Recycling",
+    "zs_recycling": {
+      "name": "ZS Recycling",
       "contact": "TBD",
       "email_account": "TBD — spin up new account",
-      "repo": "~/ez-recycling-harness",
+      "repo": "~/zs-recycling-harness",
       "owned_segments": ["SEG-5", "SEG-6"],
       "segment_names": ["Education / Charter Schools", "CEOs of Nonprofits"],
       "status": "setup",
@@ -51,8 +51,8 @@
     "SEG-2": { "name": "EHS California",                  "lead_count": 343,   "owner": "company_3"  },
     "SEG-3": { "name": "Government / Procurement Admin",  "lead_count": "TBD", "owner": "datatech"   },
     "SEG-4": { "name": "Financial / Banks",               "lead_count": 6,     "owner": "company_4"  },
-    "SEG-5": { "name": "Education / Charter Schools",     "lead_count": "TBD", "owner": "ez_recycling" },
-    "SEG-6": { "name": "CEOs of Nonprofits",              "lead_count": 373,   "owner": "ez_recycling" },
+    "SEG-5": { "name": "Education / Charter Schools",     "lead_count": "TBD", "owner": "zs_recycling" },
+    "SEG-6": { "name": "CEOs of Nonprofits",              "lead_count": 373,   "owner": "zs_recycling" },
     "SEG-7": { "name": "Hospitality",                     "lead_count": "TBD", "owner": "datatech"   }
   },
 

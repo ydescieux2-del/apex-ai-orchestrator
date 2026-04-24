@@ -27,7 +27,7 @@ You now have a **fully autonomous multi-company outreach orchestrator** that:
 
 **Two companies active:**
 1. **DataTech Disposition** (DTD) — 4 segments, ~5,700 leads
-2. **EZ Recycling** — 4 segments, 252 leads
+2. **ZS Recycling** — 4 segments, 252 leads
 
 ---
 
@@ -36,7 +36,7 @@ You now have a **fully autonomous multi-company outreach orchestrator** that:
 ### Phase 1: Send (You Do This)
 ```
 python ~/james-outreach-harness/send_emails.py --dry-run 10
-python ~/ez-recycling-harness/send_emails.py --run 50
+python ~/zs-recycling-harness/send_emails.py --run 50
 ```
 ✅ Emails go out → `email_log.json` populates → deconfliction ledger updates
 
@@ -108,7 +108,7 @@ python3 inbox_monitor.py --status
 **Commands:**
 ```bash
 # Create a link for someone
-python3 calendly_links.py --create "ted.ross@lacity.gov" "Ted Ross" --company ez_recycling
+python3 calendly_links.py --create "ted.ross@lacity.gov" "Ted Ross" --company zs_recycling
 
 # Mark someone as booked (when they click the link)
 python3 calendly_links.py --booked "ted.ross@lacity.gov"
@@ -156,7 +156,7 @@ http://localhost:8080/demo/dashboard.html
 ```
 Shows: 5,721 leads, 4 segments, email pipeline status
 
-**EZ Recycling Dashboard:**
+**ZS Recycling Dashboard:**
 ```
 http://localhost:8081/demo/dashboard.html
 ```
@@ -401,7 +401,7 @@ SEND
 
 ### How Deconfliction Works
 
-**Scenario:** Lead appears in both DTD and EZ Recycling databases
+**Scenario:** Lead appears in both DTD and ZS Recycling databases
 
 **Rule 1: Cross-Company Dedup**
 - Lead is assigned to ONE company only (first-owner wins)
@@ -437,7 +437,7 @@ python3 send_emails.py --dry-run 10
 python3 send_emails.py --run 50
 
 # EZ: send 25 emails
-cd ~/ez-recycling-harness && python3 send_emails.py --run 25
+cd ~/zs-recycling-harness && python3 send_emails.py --run 25
 
 # ═══════════════════════════════════════════
 # MONITORING
@@ -461,7 +461,7 @@ python3 inbox_monitor.py --simulate "john@example.com" --type interested
 # ═══════════════════════════════════════════
 
 # Generate a link
-python3 calendly_links.py --create "email@example.com" "Full Name" --company ez_recycling
+python3 calendly_links.py --create "email@example.com" "Full Name" --company zs_recycling
 
 # Mark as booked
 python3 calendly_links.py --booked "email@example.com"
@@ -492,7 +492,7 @@ python3 -m http.server 8080 -d ~/james-outreach-harness
 # Then visit: http://localhost:8080/demo/dashboard.html
 
 # EZ (starts on port 8081)
-python3 -m http.server 8081 -d ~/ez-recycling-harness
+python3 -m http.server 8081 -d ~/zs-recycling-harness
 # Then visit: http://localhost:8081/demo/dashboard.html
 ```
 
